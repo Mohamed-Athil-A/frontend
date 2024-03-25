@@ -144,15 +144,12 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Form validation
-    // if (!email.trim()) {
-    //   return notify1();
-    // } else if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
-    //   return notify();
-    // }
-
     if (!name || !email || !subject || !message) {
       return notify1();
+    }
+
+    if (!/^\w+([\.-]?\w+)*@gmail\.com$/.test(email)) {
+      return notify2();
     }
 
     // Email sending
@@ -166,10 +163,7 @@ const Contact = () => {
       .then(
         (result) => {
           form.current.reset();
-
-          if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
-            return notify1();
-          }
+          notify();
         },
         (error) => {
           console.log(error.text);
@@ -191,7 +185,19 @@ const Contact = () => {
     });
   };
   const notify1 = () => {
-    toast.error("Please enter a valid format!", {
+    toast.error("Please fill out all fields!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
+  const notify2 = () => {
+    toast.error("Please enter a valid email!", {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -204,7 +210,7 @@ const Contact = () => {
   };
 
   return (
-    <Container>
+    <Container id="contact">
       <Wrapper>
         <Title>Contact</Title>
         <Desc>

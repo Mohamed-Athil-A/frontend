@@ -1,7 +1,7 @@
 export const Bio = {
   name: "Mohamed Athil",
   roles: [
-    "Frontend Developer",
+    "Mern Stack Developer",
     "Programmer",
     "Content Creator",
     "Photographer",
@@ -249,7 +249,7 @@ export const projects = [
     description:
       "Its a Nike-2.0 website using Tailwindcss this is my first project using tailwind css this app is fully mobile responsive also",
     image: "https://i.ibb.co/PW7FM0K/Nike.png",
-    tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
+    tags: ["React Js", "Redux", "Tailwindcss"],
     category: "web app",
     github: "https://github.com/rishavchanda/Podstream",
     webapp: "https://nike-2-0-gules.vercel.app/",

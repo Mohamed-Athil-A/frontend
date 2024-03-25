@@ -149,7 +149,7 @@ const MobileMenu = styled.div`
   z-index: ${({ isOpen }) => (isOpen ? "10" : "-1")};
 `;
 //
-const MobileMenuLinks = styled(LinkR)`
+const MobileMenuLinks = styled.a`
   color: ${({ theme }) => theme.text_primary};
   font-weight: 500;
   cursor: pointer;
@@ -193,6 +193,7 @@ const Navbar = () => {
           <NavLink href="#skills">Skills</NavLink>
           <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#education">Education</NavLink>
+          <NavLink href="#contact">Contact</NavLink>
         </NavItems>
         <ButtonContainer>
           <GitHubButton href={Bio.github} target="_blank">
@@ -219,7 +220,7 @@ const Navbar = () => {
             </MobileMenuLinks>
 
             <MobileMenuLinks
-              href="#project"
+              href="#projects"
               onClick={() => {
                 setIsOpen(!isOpen);
               }}
